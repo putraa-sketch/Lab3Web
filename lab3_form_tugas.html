@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form dengan Dropdown dan Multiple Selection</title>
+    <style>
+        form p > label {
+            display: inline-block;
+            width: 150px;
+            font-weight: bold;
+        }
+        form input[type="text"], 
+        form input[type="email"],
+        form select {
+            border: 1px solid #197a43;
+            padding: 5px;
+            width: 300px;
+        }
+        form select[multiple] {
+            height: 120px;
+        }
+        form input[type="submit"] {
+            border: 1px solid #197a43;
+            background-color: #197a43;
+            color: #ffffff;
+            font-weight: bold;
+            padding: 8px 20px;
+            cursor: pointer;
+        }
+        fieldset {
+            border: 2px solid #197a43;
+            border-radius: 5px;
+            padding: 20px;
+        }
+        legend {
+            color: #197a43;
+            font-weight: bold;
+            font-size: 18px;
+            padding: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Form Pendaftaran Mahasiswa</h1>
+    </header>
+
+    <form action="proses.php" method="post">
+        <fieldset>
+            <legend>Data Mahasiswa</legend>
+            
+            <p>
+                <label for="nama">Nama</label>
+                <input type="text" id="nama" name="nama">
+            </p>
+            
+            <p>
+                <label for="nim">NIM</label>
+                <input type="text" id="nim" name="nim">
+            </p>
+            
+            <p>
+                <label>Jenis Kelamin</label>
+                <input id="jk_l" type="radio" name="kelamin" value="L">
+                <label for="jk_l" style="width: auto;">Laki-laki</label>
+                <input id="jk_p" type="radio" name="kelamin" value="P">
+                <label for="jk_p" style="width: auto;">Perempuan</label>
+            </p>
+            
+            <!-- Dropdown Menu -->
+            <p>
+                <label for="fakultas">Fakultas</label>
+                <select id="fakultas" name="fakultas">
+                    <option value="">-- Pilih Fakultas --</option>
+                    <option value="teknik">Fakultas Teknik</option>
+                    <option value="ekonomi">Fakultas Ekonomi dan Bisnis</option>
+                    <option value="pertanian">Fakultas Pertanian</option>
+                    <option value="kedokteran">Fakultas Kedokteran</option>
+                </select>
+            </p>
+            
+            <!-- Multiple Selection Listbox -->
+            <p>
+                <label for="matkul">Mata Kuliah</label>
+                <select id="matkul" name="matkul[]" multiple>
+                    <option value="pweb">Pemrograman Web</option>
+                    <option value="si">Sistem Informasi</option>
+                    <option value="bd">Basis Data</option>
+                    <option value="rpl">Rekayasa Perangkat Lunak</option>
+                    <option value="jarkom">Jaringan Komputer</option>
+                </select>
+            </p>
+            
+            <p>
+                <label></label>
+                <input type="submit" value="Submit">
+            </p>
+        </fieldset>
+    </form>
+</body>
+</html>
